@@ -51,6 +51,13 @@ export class ApploadService {
 
   }
 
+  getCurrentURL() {
+    console.log(`ENTER getCurrentURL()`);
+    console.log(`EXIT getCurrentURL()`);
+    return this.currentURL;
+
+  }
+
   mapUserURLtoSettingsURL(url: string) {
     // dummy implementation
   }
