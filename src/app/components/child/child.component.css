@@ -1,10 +1,10 @@
 div {
-  background: lightyellow;
-  padding:50px;
+  background: lightcyan;
+  padding:20px;
   font-size: 16px;
   font-style: normal;
   font-family: Arial;
-  color: red;
+  color: purple;
 }
 
 h4 {

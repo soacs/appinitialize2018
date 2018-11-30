@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<link rel="stylesheet" href="../assets/soacs/app.component.css">
+<link rel="stylesheet" [href]='brandCssUrl'>
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -8,6 +8,9 @@
 
   <h2>App current URL: </h2>
   {{ currentUrl }}
+
+  <h2>Brand CSS URL: </h2>
+  {{ sanitizer.bypassSecurityTrustResourceUrl(brandCssUrl) }}
 
   <h2>App businessUnit: </h2>
   {{ businessName }}
@@ -18,6 +21,7 @@
   <h4>Connection String: </h4> {{ settings.connectionString}}
   <h4>Image URL: </h4> {{ settings.defaultImageUrl}}
   <h4>Business Name: </h4> {{ settings.businessName}}
+  <app-child></app-child>
 </div>
 
 
