@@ -12,6 +12,7 @@ export class ApploadService {
     console.log('BEGIN: ApploadService.constructor()');
     this.currentURL = window.location.href;
     console.log('currentURL = ' + this.currentURL);
+
     console.log('EXIT: ApploadService.constructor()');
   }
 
@@ -31,6 +32,7 @@ export class ApploadService {
     console.log(`ENTER getSettings()`);
     // map user URL to settings location URL (diferent business has different settings
     // http://angularorange.io/json/settings.json
+    const businessName = this.getBusinessName(this.currentURL);
     const settingsUrl = this.mapUserURLtoSettingsURL(this.currentURL);
     console.log(`Call web service API to get settings...`);
     const promise = this.httpClient.get(settingsUrl)
@@ -57,8 +59,12 @@ export class ApploadService {
     const lowerCaseBusinessName = APP_SETTINGS.businessName.toLowerCase();
     const brandCss = `${environment.brandDir}${lowerCaseBusinessName}-brand.css`;
     console.log(`brandCss = ${brandCss}`);
+
+    const t0 = console.time('sanitizer');
     const brandCssUrl = this.sanitizer.bypassSecurityTrustResourceUrl(brandCss);
-    console.log('brandCssUrl = ' + brandCssUrl);
+    const t1 = console.timeEnd('sanitizer');
+
+    console.log(`brandCssUrl = ${brandCssUrl}`);
     return brandCssUrl;
   }
 
@@ -66,6 +72,14 @@ export class ApploadService {
     console.log(`ENTER getCurrentURL()`);
     console.log(`EXIT getCurrentURL()`);
     return this.currentURL;
+  }
+
+  getBusinessName(currentUrl: string) {
+    const indexOfEqual = currentUrl.lastIndexOf('=');
+    console.log(`indexOfEqual: ` + indexOfEqual);
+    const businessName = currentUrl.substr(indexOfEqual);
+    console.log(`businessName: ` + businessName);
+    return businessName;
   }
 
   mapUserURLtoSettingsURL(url: string): string {
