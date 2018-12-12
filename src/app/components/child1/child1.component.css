@@ -1,0 +1,52 @@
+div {
+
+  padding:20px;
+  font-size: 14px;
+  font-style: normal;
+  font-family: Arial;
+  color: purple;
+  margin: 20px;
+  text-align:center
+}
+
+h4 {
+  color: dodgerblue;
+}
+
+
+h1 {
+  color: darkblue;
+}
+
+h2 {
+  color: purple;
+}
+
+
+h3 {
+  color: purple;
+}
+
+.aoNgClass {
+  background: brown;
+  color: gold;
+}
+
+.soacsNgClass {
+  background: yellowgreen;
+  color: darkblue;
+}
+
+/*
+:host-context(.red-theme) .div-theme {
+
+  background: lightgrey;
+
+}
+ replace div with this: <div class="div-theme">
+:host-context(.blue-theme) .div-theme {
+
+  background: lightblue;
+
+}
+*/

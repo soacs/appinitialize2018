@@ -1,10 +1,12 @@
 div {
-  background: lightpink;
-  padding:50px;
-  font-size: 18px;
+  /* background: paleturquoise; */
+  padding:20px;
+  font-size: 34px;
   font-style: normal;
   font-family: Arial;
-  color: red;
+  /* color: purple; */
+  margin: 20px;
+  text-align: center;
 }
 
 h4 {
@@ -19,13 +21,7 @@ h2 {
   color: purple;
 }
 
+
 h3 {
   color: purple;
-}
-
-
-
-.soacsNgClass {
-  background: yellowgreen;
-  color: darkblue;
 }

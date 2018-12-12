@@ -1,0 +1,40 @@
+div {
+  background: palevioletred;
+  padding:20px;
+  font-size: 14px;
+  font-style: italic;
+  font-family: Constantia;
+  color: white;
+  margin: 20px;
+  text-align:center;
+}
+
+h4 {
+  color: orange;
+}
+
+
+h1 {
+  color: orangered;
+}
+
+h2 {
+  color: darkorange;
+}
+
+
+h3 {
+  color: deeppink;
+}
+
+:host-context(.red-theme) .div-theme {
+
+  background: lightgrey;
+
+}
+
+:host-context(.blue-theme) .div-theme {
+
+  background: lightblue;
+
+}
